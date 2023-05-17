@@ -67,9 +67,44 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
+```
  
+#include <Servo.h>
+int pos = 0;
 
+Servo servo_9;
 
+void setup()
+{
+  servo_9.attach(9, 500, 2500);
+Serial.begin(9600);  
+
+}
+
+void loop()
+{
+  for (pos = 0 ; pos <= 180 ; pos += 1)
+  {
+    servo_9.write(pos);
+    delay(1);
+	//Serial.print("Angle of Server = ");
+	Serial.println(pos);    
+    
+  }
+  for (pos = 180 ; pos >= 0 ; pos -= 1){
+    servo_9.write(pos);
+    delay(1);
+	//Serial.print("Angle of Server = ");
+	Serial.println(pos);    
+  }
+}
+```
+
+## BEFORE STIMULATION:
+![be5](https://github.com/Iyyanar22009120/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/118680259/a82f3d7f-d9fb-4a37-9d38-14968c575e38)
+
+## AFTER STIMULATION:
+![ae5](https://github.com/Iyyanar22009120/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/118680259/1951e1f1-eef1-4bb6-8c07-01c8a920e22b)
 
 
 
